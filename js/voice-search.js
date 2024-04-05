@@ -40,7 +40,3 @@ const voiceRecognition = () => {
 document.querySelector('.form__microphone-icon').addEventListener("click", voiceSearchModalOpen);
 document.querySelector(".voice-search__close-modal").addEventListener("click", voiceSearchModalClose);
 document.querySelector(".voice-search__microphone-border").addEventListener("click", voiceRecognition)
-
-x = "document.querySelector('.form__microphone-icon').addEventListener("click", voiceSearchModalOpen);"
-y = "document.querySelector(".voice - search__close - modal").addEventListener("click", voiceSearchModalClose);"
-z = "document.querySelector(".voice - search__microphone - border").addEventListener("click", voiceRecognition)"
