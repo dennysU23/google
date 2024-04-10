@@ -6,6 +6,7 @@ const voiceSearchModalOpen = ()=>{
 	voiceSearch.style.display = "flex";
 	voiceSearch.style.animation = "aparecer 0.5s forwards";
 	voiceRecognition();
+	
 }
 
 
@@ -16,6 +17,7 @@ const voiceSearchModalClose = () =>{
 	},250)
 }
 
+
 const voiceRecognition = () =>{
 	if (microAceptado == false) {
 	window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
@@ -23,6 +25,7 @@ const voiceRecognition = () =>{
 		alert("que pena, no podes usar la API")
 }  
 	}
+
 	document.querySelector(".voice-search__result-text").innerHTML = "Habla ahora";
     let recognition = new window.SpeechRecognition();
 
