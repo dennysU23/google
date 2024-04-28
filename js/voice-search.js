@@ -1,3 +1,4 @@
+'I cannot change it' 
 
 const voiceSearch = document.querySelector(".voice-search");
 let microAceptado = false;
@@ -7,7 +8,6 @@ const voiceSearchModalOpen = ()=>{
 	voiceSearch.style.animation = "aparecer 0.5s forwards";
 	voiceRecognition();
 }
-
 
 const voiceSearchModalClose = () =>{
 	voiceSearch.style.animation = "desaparecer 0.25s forwards";
