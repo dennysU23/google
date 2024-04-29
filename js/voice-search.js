@@ -20,7 +20,7 @@ const voiceRecognition = () =>{
 	if (microAceptado == false) {
 	window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 	if (!'SpeechRecognition' in window) {
-		alert("que pena, no podes usar la API")
+		alert("que penaaa, no podes usar la API, cabio.")
 }  
 	}
 	document.querySelector(".voice-search__result-text").innerHTML = "Habla ahora";
