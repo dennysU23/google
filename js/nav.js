@@ -6,7 +6,7 @@ let navProfileClose = true;
 const nav = document.querySelector('.nav__li-submenu-ul');
 const navProfile = document.querySelector(".nav__submenu-profile")
 
-function navAction(){
+const navAction=()=>{
 	if (navClose == true) {
 		nav.style.display = "block";
 		navClose = false;
@@ -21,7 +21,7 @@ function navAction(){
 }
 
 
-function navProfileAction(){
+const navProfileAction=()=>{
 	if (navProfileClose == true) {
 		navProfile.style.display = "block";
 		navProfileClose = false;
