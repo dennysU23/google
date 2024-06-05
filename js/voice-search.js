@@ -1,4 +1,4 @@
-
+//Modificando el archivo del totu pero dalto el pelotudo ya lo hizo
 const voiceSearch = document.querySelector(".voice-search");
 let microAceptado = false;
 
