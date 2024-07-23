@@ -9,4 +9,4 @@ function getValue(param) {
 let URL = getValue("url");
 let icon = document.querySelector(".icon");
 icon.src = "img/directAccess/" + URL + ".png";
-icon.width = "21"
+icon.width = "22"
