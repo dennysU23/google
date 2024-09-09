@@ -1,13 +1,13 @@
-
+// Se crea una variable con la referencia para optimizar el codigo
 const voiceSearch = document.querySelector(".voice-search");
-let microAceptado = false;
+let microValido = false;
+
 
 const voiceSearchModalOpen = ()=>{
 	voiceSearch.style.display = "flex";
 	voiceSearch.style.animation = "aparecer 0.5s forwards";
 	voiceRecognition();
 }
-
 
 const voiceSearchModalClose = () =>{
 	voiceSearch.style.animation = "desaparecer 0.25s forwards";
@@ -17,7 +17,7 @@ const voiceSearchModalClose = () =>{
 }
 
 const voiceRecognition = () =>{
-	if (microAceptado == false) {
+	if (microValido == false) {
 	window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 	if (!'SpeechRecognition' in window) {
 		alert("que pena, no podes usar la API")
