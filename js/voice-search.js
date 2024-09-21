@@ -1,42 +1,60 @@
-
 const voiceSearch = document.querySelector(".voice-search");
+const resultText = document.querySelector(".voice-search__result-text");
 let microAceptado = false;
 
-const voiceSearchModalOpen = ()=>{
-	voiceSearch.style.display = "flex";
-	voiceSearch.style.animation = "aparecer 0.5s forwards";
-	voiceRecognition();
-}
+// Abrir modal de búsqueda por voz
+const voiceSearchModalOpen = () => {
+  voiceSearch.style.display = "flex";
+  voiceSearch.style.animation = "aparecer 0.5s forwards";
+  voiceRecognition();
+};
 
+// Cerrar modal de búsqueda por voz
+const voiceSearchModalClose = () => {
+  voiceSearch.style.animation = "desaparecer 0.25s forwards";
+  setTimeout(() => {
+    voiceSearch.style.display = "none";
+  }, 250);
+};
 
-const voiceSearchModalClose = () =>{
-	voiceSearch.style.animation = "desaparecer 0.25s forwards";
-	setTimeout(()=>{
-	    voiceSearch.style.display = "none";
-	},250)
-}
+// Función de reconocimiento de voz
+const voiceRecognition = async () => {
+  if (!microAceptado) {
+    // Comprobar soporte para la API de reconocimiento de voz
+    window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+    if (!window.SpeechRecognition) {
+      alert("Lo siento, tu navegador no soporta la API de reconocimiento de voz.");
+      return;
+    }
+    microAceptado = true;
+  }
 
-const voiceRecognition = () =>{
-	if (microAceptado == false) {
-	window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
-	if (!'SpeechRecognition' in window) {
-		alert("que pena, no podes usar la API")
-}  
-	}
-	document.querySelector(".voice-search__result-text").innerHTML = "Habla ahora";
-    let recognition = new window.SpeechRecognition();
+  resultText.innerHTML = "Habla ahora";
+
+  try {
+    const recognition = new window.SpeechRecognition();
 
     recognition.onresult = (event) => {
-    let voiceText = event.results[0][0].transcript;
-    document.querySelector(".voice-search__result-text").innerHTML = voiceText;
-    recognition.stop();
-    setTimeout(()=>{
-    window.open("https://google.com/search?q="+voiceText);
-    },1800)
-}
-    recognition.start();
-}
+      const voiceText = event.results[0][0].transcript;
+      resultText.innerHTML = voiceText;
+      recognition.stop();
+      openSearchPage(voiceText);
+    };
 
-document.querySelector('.form__microphone-icon').addEventListener("click",voiceSearchModalOpen);
-document.querySelector(".voice-search__close-modal").addEventListener("click",voiceSearchModalClose);
-document.querySelector(".voice-search__microphone-border").addEventListener("click",voiceRecognition)
+    recognition.start();
+  } catch (error) {
+    console.error("Error en reconocimiento de voz: ", error);
+  }
+};
+
+// Función para abrir la página de búsqueda después de un retraso
+const openSearchPage = (query) => {
+  setTimeout(() => {
+    window.open(`https://google.com/search?q=${encodeURIComponent(query)}`);
+  }, 1800);
+};
+
+// Eventos para abrir y cerrar modal
+document.querySelector('.form__microphone-icon').addEventListener("click", voiceSearchModalOpen);
+document.querySelector(".voice-search__close-modal").addEventListener("click", voiceSearchModalClose);
+document.querySelector(".voice-search__microphone-border").addEventListener("click", voiceRecognition);
