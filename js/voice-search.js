@@ -1,6 +1,6 @@
 
 const voiceSearch = document.querySelector(".voice-search");
-let microAceptado = false;
+let microAceptado = True;
 
 const voiceSearchModalOpen = ()=>{
 	voiceSearch.style.display = "flex";
