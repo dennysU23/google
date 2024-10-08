@@ -24,8 +24,8 @@ Personalización: Opciones para cambiar el tema de la interfaz entre claro y osc
 
 INSTALACION
 
-git clone https://github.com/tu_usuario/simulador-de-google-proyectoucc
-cd simulador-de-google-proyectoucc
+git clone https://github.com/tu_usuario/simulador-de-google
+cd simulador-de-google
 
 
 USO
