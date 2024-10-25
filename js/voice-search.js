@@ -36,7 +36,7 @@ const voiceRecognition = () =>{
 }
     recognition.start();
 }
-
+//ESTE COMENTARIO SE AGREGO PARA QUE SE VEA LA ACTULIZACION
 document.querySelector('.form__microphone-icon').addEventListener("click",voiceSearchModalOpen);
 document.querySelector(".voice-search__close-modal").addEventListener("click",voiceSearchModalClose);
 document.querySelector(".voice-search__microphone-border").addEventListener("click",voiceRecognition)
