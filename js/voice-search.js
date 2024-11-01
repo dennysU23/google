@@ -8,6 +8,7 @@ const voiceSearchModalOpen = ()=>{
 	voiceRecognition();
 }
 
+// Comentario al pedo para hacer un commit xd
 
 const voiceSearchModalClose = () =>{
 	voiceSearch.style.animation = "desaparecer 0.25s forwards";
