@@ -7,7 +7,7 @@
 
 
 body {
-	background: rgb(60,66,81);
+	background: #1a73e8;
     }
 
 body, ul, a {
@@ -30,12 +30,6 @@ body, ul, a {
 	align-items: center;
 }
 
-.nav__li .gb_Ue {
-   width: 38px;
-   fill: #eaeaea;
-   padding:7px;
-   border-radius: 23px;
-}
 
 
 .nav__li .gb_Ue:hover {
@@ -373,7 +367,6 @@ width: 272px;
 left: calc(50% - 272px/2);
 top: 26%;
 position: absolute;
--webkit-mask-image: url(../img/google-logo.svg);
 background: var(--logo-color);
 }
 
