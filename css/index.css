@@ -8,7 +8,9 @@
 
 body {
 	background: rgb(60,66,81);
-    }
+	--bg-hover-elements: rgba(255,255,255,0.1);
+	--bg-hover-elements-nav: rgba(244,244,244);
+}
 
 body, ul, a {
 	padding: 0;
@@ -31,15 +33,15 @@ body, ul, a {
 }
 
 .nav__li .gb_Ue {
-   	width: 38px;
-   	fill: #eaeaea;
-   	padding:7px;
-   	border-radius: 23px;
+	width: 38px;
+	fill: #eaeaea;
+	padding:7px;
+	border-radius: 23px;
 }
 
 
 .nav__li .gb_Ue:hover {
-	background-color: rgba(255,255,255,0.1);
+	background-color: var(--bg-hover-elements);
 }
 
 .nav__li {
@@ -60,7 +62,7 @@ body, ul, a {
 }
 
 .nav__profile-img:hover {
-	background-color: rgba(255,255,255,0.1);
+	background-color: var(--bg-hover-elements);
 }
 
 
@@ -276,7 +278,7 @@ text-decoration: none;
 }
 
 .gestionar-cuenta-de-google:hover {
-	background-color: rgba(244,244,244)
+	background-color: var(--bg-hover-elements-nav);
 }
 
 
@@ -295,7 +297,7 @@ text-decoration: none;
 }
 
 .nav__profile:hover {
-	background-color: rgba(244,244,244);
+	background-color: var(--bg-hover-elements-nav);
 }
 
 
@@ -349,7 +351,7 @@ margin: auto;
 margin-bottom: 0;
 }
 .politicas-de-privacidad-button:hover,.condiciones-de-servicio-button:hover {
-background: rgb(244,244,244);
+background: var(--bg-hover-elements-nav);
 }
 
 
@@ -384,6 +386,8 @@ background: var(--logo-color);
 	top: 45%;
 	text-align: center;
 	width: 100%;
+	margin-inline: auto;
+	place-content: center;
 	/* place-content: center; */
 }
 
@@ -397,7 +401,9 @@ height: var(--searchbox-height);
 position: relative;
 box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 margin: 0 auto;
-max-width: 564px;
+max-width: clamp(584px, calc(100% - 200px), 686px);
+display: flex;
+justify-content: space-between;
 cursor: text;
 }
 
@@ -410,7 +416,7 @@ left: 0;
 opacity: 1;
 position: absolute;
 top: 0;
-width: 92%;
+width: 100%;
 color: #000;
 border: none;
 font-size: 16px;
@@ -430,15 +436,18 @@ padding-right: 0;
 
 
 .form__microphone-icon {
+display: block;
+margin: auto;
 border: 0;
 background: url(../img/google-microfono.svg) no-repeat center;
-background-size: 21px 21px;
+background-size: 24px 24px;
 cursor: pointer;
 padding: 22px 12px 0;
 width: 21px;
 float:right;
-margin-top: 11px;
-margin-right: 16px
+z-index: 10;
+margin-right: 16px;
+transition: all .3s ease-in-out;
 }
 
 
