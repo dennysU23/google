@@ -1,5 +1,11 @@
-document.querySelector(".gb_Ue").addEventListener("click",navAction);
-document.querySelector(".nav__li-submenu").addEventListener("click",navProfileAction);
+const gb_Ue = document.querySelector(".gb_Ue");
+const nav_sub_menu = document.querySelector(".nav__li-submenu");
+
+// Agregando eventos!
+gb_Ue.addEventListener("click",navAction);
+nav_sub_menu.addEventListener("click",navProfileAction);
+
+
 let zIndex = 20;
 let navClose = true;
 let navProfileClose = true;
@@ -7,7 +13,7 @@ const nav = document.querySelector('.nav__li-submenu-ul');
 const navProfile = document.querySelector(".nav__submenu-profile")
 
 function navAction(){
-	if (navClose == true) {
+	if (navClose){
 		nav.style.display = "block";
 		navClose = false;
 		nav.style.zIndex = zIndex;
@@ -22,7 +28,7 @@ function navAction(){
 
 
 function navProfileAction(){
-	if (navProfileClose == true) {
+	if (navProfileClose) {
 		navProfile.style.display = "block";
 		navProfileClose = false;
 		navProfile.style.zIndex = zIndex;
